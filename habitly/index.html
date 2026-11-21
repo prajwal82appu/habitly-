@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habitly | Daily Habit Tracker</title>
+  <meta name="description" content="Habitly: a simple, clean view of your daily habits and streaks.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">
+        <span class="brand-logo" aria-hidden="true">🔥</span>
+        Habitly
+      </h1>
+      <p class="date">Friday, 6 November</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Summary stats -->
+    <section class="summary" aria-labelledby="summary-title">
+      <h2 id="summary-title" class="section-title">Today at a glance</h2>
+      <div class="stats-grid">
+        <article class="card stat-card">
+          <p class="stat-label">Done today</p>
+          <p class="stat-value">3/5</p>
+        </article>
+        <article class="card stat-card">
+          <p class="stat-label">Best streak</p>
+          <p class="stat-value">12 days</p>
+        </article>
+        <article class="card stat-card">
+          <p class="stat-label">This week</p>
+          <p class="stat-value">78%</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Habit cards -->
+    <section class="habits" aria-labelledby="habits-title">
+      <h2 id="habits-title" class="section-title">Your habits</h2>
+      <div class="habit-grid">
+
+        <article class="card habit-card">
+          <span class="habit-emoji" aria-hidden="true">💧</span>
+          <h3 class="habit-name">Drink Water</h3>
+          <p class="streak">7 days</p>
+          <button class="btn" type="button">Complete</button>
+        </article>
+
+        <article class="card habit-card">
+          <span class="habit-emoji" aria-hidden="true">📖</span>
+          <h3 class="habit-name">Read 20 Pages</h3>
+          <p class="streak">12 days</p>
+          <button class="btn" type="button">Complete</button>
+        </article>
+
+        <article class="card habit-card">
+          <span class="habit-emoji" aria-hidden="true">🏃</span>
+          <h3 class="habit-name">Morning Run</h3>
+          <p class="streak">4 days</p>
+          <button class="btn" type="button">Complete</button>
+        </article>
+
+        <article class="card habit-card">
+          <span class="habit-emoji" aria-hidden="true">🧘</span>
+          <h3 class="habit-name">Meditate</h3>
+          <p class="streak">9 days</p>
+          <button class="btn" type="button">Complete</button>
+        </article>
+
+        <article class="card habit-card">
+          <span class="habit-emoji" aria-hidden="true">💻</span>
+          <h3 class="habit-name">Code Practice</h3>
+          <p class="streak">21 days</p>
+          <button class="btn" type="button">Complete</button>
+        </article>
+
+        <article class="card habit-card">
+          <span class="habit-emoji" aria-hidden="true">😴</span>
+          <h3 class="habit-name">Sleep by 11</h3>
+          <p class="streak">3 days</p>
+          <button class="btn" type="button">Complete</button>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>Built with the CodGen Frontend Internship | <a href="https://codgen.in">codgen.in</a></p>
+  </footer>
+
+</body>
+
+</html>

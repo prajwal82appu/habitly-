@@ -1,0 +1,264 @@
+/* ==========================================================
+   Habitly - Week 1 (Layout & Habit Cards)
+   ========================================================== */
+
+/* ---------- Design tokens ---------- */
+:root {
+  /* Colors */
+  --navy: #0B1F3A;
+  --teal: #14B8A6;
+  --teal-dark: #0F9488;
+  --bg: #F8FAFC;
+  --white: #FFFFFF;
+  --text-muted: #5B6B80;
+
+  /* Spacing (multiples of 8px) */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+
+  /* Shape & shadow */
+  --radius: 12px;
+  --shadow: 0 2px 8px rgba(11, 31, 58, 0.08);
+  --shadow-hover: 0 8px 24px rgba(11, 31, 58, 0.14);
+
+  /* Font */
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ---------- Reset / base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--navy);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: var(--space-2);
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  background: var(--navy);
+  color: var(--white);
+  border-bottom: 4px solid var(--teal);
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+  padding-block: var(--space-3);
+}
+
+.brand {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.date {
+  margin: 0;
+  color: #CBD5E1;
+  font-size: 0.95rem;
+}
+
+/* ---------- Main ---------- */
+main {
+  flex: 1;
+  padding-block: var(--space-4) var(--space-6);
+}
+
+.section-title {
+  margin: 0 0 var(--space-2);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.summary {
+  margin-bottom: var(--space-4);
+}
+
+/* ---------- Cards (shared) ---------- */
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--space-3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ---------- Stat cards ---------- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* one column on phones */
+  gap: var(--space-2);
+}
+
+.stat-label {
+  margin: 0 0 var(--space-1);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.stat-value {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+/* ---------- Habit cards ---------- */
+.habit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-3);
+}
+
+.habit-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+}
+
+.habit-emoji {
+  font-size: 2.5rem;
+  line-height: 1;
+  margin-bottom: var(--space-1);
+}
+
+.habit-name {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.streak {
+  margin: 0 0 var(--space-2);
+  padding: 4px var(--space-1);
+  background: rgba(20, 184, 166, 0.12);
+  color: var(--teal-dark);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 999px;
+}
+
+/* ---------- Button ---------- */
+.btn {
+  margin-top: auto;
+  width: 100%;
+  padding: 12px var(--space-3);
+  background: var(--teal);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--space-1);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--teal-dark);
+  transform: translateY(-2px);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 2px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--navy);
+  color: #CBD5E1;
+  text-align: center;
+  padding: var(--space-3) var(--space-2);
+  font-size: 0.875rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Tablet (768px+) ---------- */
+@media (min-width: 768px) {
+  .container {
+    padding-inline: var(--space-4);
+  }
+
+  .header-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+  }
+}
+
+/* ---------- Laptop (1280px+) ---------- */
+@media (min-width: 1280px) {
+  .brand {
+    font-size: 2rem;
+  }
+
+  .habit-grid {
+    gap: var(--space-4);
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .btn {
+    transition: none;
+  }
+  .card:hover,
+  .btn:hover {
+    transform: none;
+  }
+}
